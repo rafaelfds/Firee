@@ -1,0 +1,519 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="right_col" role="main">
+    <!-- top tiles -->
+    <div class="row tile_count">
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-folder-open"></i> Opening Stock</span>
+            <div class="count" id="openingStock">2,394.51</div>
+            <span class="count_bottom"><i class="green">4% </i> From last Week</span>
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-minus"></i> Purchases</span>
+            <div class="count" id="purchases">1,154.00</div>
+            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-folder"></i> Closing Stock</span>
+            <div class="count" id="closingStock">2,443.86</div>
+            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+        </div>
+           
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-eur"></i> Cost Sales</span>
+            <div class="count" id="costSales"></div>
+            <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-plus"></i> Total Sales</span>
+            <div class="count" id="totalSales">3,625.50</div>
+            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-bank"></i> GP (-9%)</span>
+            <div class="count" id="grossProfit"></div>
+            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>4% </i> From last Week</span>
+        </div>
+    </div>
+    <!-- /top tiles -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Total Sales <small> 6% - From Last Week</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li class="pull-right">
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <canvas id="mybarChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Purchases<small> 6% - From Last Week</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">                        
+                        <li class="pull-right">
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <canvas id="barChartPurchases"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Gross Profit<small> 6% - From Last Week</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li class="pull-right">
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <canvas id="barChartGrossProfit"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Week Breakdown - Week 26 / 2016</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        
+                        <li class="pull-right">
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="pull-right">
+                            <a><i class="fa fa-file-excel-o"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Year & Week Analysis</th>
+                                <th>2016 - &euro;</th>
+                                <th>2015 - &euro;</th>
+                                <th>2016</th>
+                                <th>2015</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Monday - 20/06/2016</th>
+                                <td>5,883.60</td>
+                                <td>1,569.05</td>
+                                <td>274.98%</td>
+                                <td>300.25%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Tuesday - 21/06/2016</th>
+                                <td>2,526.95</td>
+                                <td>1,833.87</td>
+                                <td>37.81%</td>
+                                <td>50.25%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Wednesday - 22/06/2016</th>
+                                <td>2,948.00</td>
+                                <td>2,342.45</td>
+                                <td>25.85%</td>
+                                <td>31.23%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Thrusday - 23/06/2016</th>
+                                <td>3,105.15</td>
+                                <td>3,066.55</td>
+                                <td>1/26%</td>
+                                <td>48.13%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Friday - 24/06/2016</th>
+                                <td>7,460.85</td>
+                                <td>7,604.06</td>
+                                <td>-1.89%</td>
+                                <td>22.70%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Saturday - 25/06/2016</th>
+                                <td>9,816.85</td>
+                                <td>9,668.05</td>
+                                <td>1.54%</td>
+                                <td>11.02%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sunday - 26/06/2016</th>
+                                <td>3,000.00</td>
+                                <td>2,000.00</td>
+                                <td>50.00%</td>
+                                <td>20.00%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><b>Total</b></th>
+                                <td><b>34,741.00</b></td>
+                                <td><b>28,220.31</b></td>
+                                <td><b>12.48%</b></td>
+                                <td><b>24.55%</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Recent Activities</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li class="pull-right">
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="dashboard-widget-content">
+                        <ul class="list-unstyled timeline widget">
+                            <li>
+                                <div class="block">
+                                    <div class="block_content">
+                                        <h2 class="title">
+                                            <a>Ordered from La Rousse</a>
+                                        </h2>
+                                        <div class="byline">
+                                            <span>13 hours ago</span> by <a>Frankley Fernandes</a>
+                                        </div>
+                                        <p class="excerpt">
+                                            Aspargus, Baby Carrot, Baby Spinash...<a>Read&nbsp;More</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="block">
+                                    <div class="block_content">
+                                        <h2 class="title">
+                                            <a>Ordered from Keelings</a>
+                                        </h2>
+                                        <div class="byline">
+                                            <span>36 hours ago</span> by <a>Frankley Fernandes</a>
+                                        </div>
+                                        <p class="excerpt">
+                                            Butter, Carrots, Chilli… <a>Read&nbsp;More</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Flot -->
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            var openingStock = $("#openingStock").html();
+            var purchases = $("#purchases").html();
+            var closingStock = $("#closingStock").html();
+
+            var costSales = Number(openingStock.replace(/[^0-9\.]+/g, "")) + Number(purchases.replace(/[^0-9\.]+/g, "")) - Number(closingStock.replace(/[^0-9\.]+/g, ""))
+            $("#costSales").html(costSales);
+            $('#costSales').number(true, 2);
+
+            var totalSales = $("#totalSales").html();
+            var vatTotal = Number(totalSales.replace(/[^0-9\.]+/g, "")) - (Number(totalSales.replace(/[^0-9\.]+/g, "")) * 0.009)
+
+            var grossProfit = (vatTotal - costSales) / vatTotal;
+            $("#grossProfit").html(grossProfit * 100);
+            $('#grossProfit').number(true, 0);
+            $('#grossProfit').html($('#grossProfit').html() + "%")
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // Bar chart
+            var ctx = document.getElementById("mybarChart");
+            var mybarChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"],
+                    datasets: [{
+                        label: '# in Euros',
+                        backgroundColor: "#26B99A",
+                        data: [3000.00, 2540.50, 2000.00, 1500.00, 2000.00, 2000.00, 2000.00]
+                    }]
+                },
+
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            //barChartPurchases
+            var ctx = document.getElementById("barChartPurchases");
+            var mybarChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"],
+                    datasets: [{
+                        label: '# in Euros',
+                        backgroundColor: "#26B99A",
+                        data: [3000.00, 2540.50, 2000.00, 1500.00, 2000.00, 2000.00, 2000.00]
+                    }]
+                },
+
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            //barChartGrossProfit
+            var ctx = document.getElementById("barChartGrossProfit");
+            var mybarChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"],
+                    datasets: [{
+                        label: '# in Euros',
+                        backgroundColor: "#26B99A",
+                        data: [3000.00, 2540.50, 2000.00, 1500.00, 2000.00, 2000.00, 2000.00]
+                    }]
+                },
+
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        });
+    </script>
+    <!-- /Flot -->
+    <!-- JQVMap -->
+    <script>
+        $(document).ready(function () {
+            $('#world-map-gdp').vectorMap({
+                map: 'world_en',
+                backgroundColor: null,
+                color: '#ffffff',
+                hoverOpacity: 0.7,
+                selectedColor: '#666666',
+                enableZoom: true,
+                showTooltip: true,
+                values: sample_data,
+                scaleColors: ['#E6F2F0', '#149B7E'],
+                normalizeFunction: 'polynomial'
+            });
+        });
+    </script>
+    <!-- /JQVMap -->
+    <!-- Skycons -->
+    <script>
+        $(document).ready(function () {
+            var icons = new Skycons({
+                "color": "#73879C"
+            }),
+              list = [
+                "clear-day", "clear-night", "partly-cloudy-day",
+                "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                "fog"
+              ],
+              i;
+
+            for (i = list.length; i--;)
+                icons.set(list[i], list[i]);
+
+            icons.play();
+        });
+    </script>
+    <!-- /Skycons -->
+    <!-- Doughnut Chart -->
+    <script>
+        $(document).ready(function () {
+            var options = {
+                legend: false,
+                responsive: false
+            };
+
+            new Chart(document.getElementById("canvas1"), {
+                type: 'doughnut',
+                tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+                data: {
+                    labels: [
+                      "Symbian",
+                      "Blackberry",
+                      "Other",
+                      "Android",
+                      "IOS"
+                    ],
+                    datasets: [{
+                        data: [15, 20, 30, 10, 30],
+                        backgroundColor: [
+                          "#BDC3C7",
+                          "#9B59B6",
+                          "#E74C3C",
+                          "#26B99A",
+                          "#3498DB"
+                        ],
+                        hoverBackgroundColor: [
+                          "#CFD4D8",
+                          "#B370CF",
+                          "#E95E4F",
+                          "#36CAAB",
+                          "#49A9EA"
+                        ]
+                    }]
+                },
+                options: options
+            });
+        });
+    </script>
+    <!-- /Doughnut Chart -->
+    <!-- bootstrap-daterangepicker -->
+    <script>
+        $(document).ready(function () {
+
+            var cb = function (start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+            };
+
+            var optionSet1 = {
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment(),
+                minDate: '01/01/2012',
+                maxDate: '12/31/2015',
+                dateLimit: {
+                    days: 60
+                },
+                showDropdowns: true,
+                showWeekNumbers: true,
+                timePicker: false,
+                timePickerIncrement: 1,
+                timePicker12Hour: true,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                opens: 'left',
+                buttonClasses: ['btn btn-default'],
+                applyClass: 'btn-small btn-primary',
+                cancelClass: 'btn-small',
+                format: 'MM/DD/YYYY',
+                separator: ' to ',
+                locale: {
+                    applyLabel: 'Submit',
+                    cancelLabel: 'Clear',
+                    fromLabel: 'From',
+                    toLabel: 'To',
+                    customRangeLabel: 'Custom',
+                    daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+                    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    firstDay: 1
+                }
+            };
+            $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+            $('#reportrange').daterangepicker(optionSet1, cb);
+            $('#reportrange').on('show.daterangepicker', function () {
+                console.log("show event fired");
+            });
+            $('#reportrange').on('hide.daterangepicker', function () {
+                console.log("hide event fired");
+            });
+            $('#reportrange').on('apply.daterangepicker', function (ev, picker) {
+                console.log("apply event fired, start/end dates are " + picker.startDate.format('MMMM D, YYYY') + " to " + picker.endDate.format('MMMM D, YYYY'));
+            });
+            $('#reportrange').on('cancel.daterangepicker', function (ev, picker) {
+                console.log("cancel event fired");
+            });
+            $('#options1').click(function () {
+                $('#reportrange').data('daterangepicker').setOptions(optionSet1, cb);
+            });
+            $('#options2').click(function () {
+                $('#reportrange').data('daterangepicker').setOptions(optionSet2, cb);
+            });
+            $('#destroy').click(function () {
+                $('#reportrange').data('daterangepicker').remove();
+            });
+        });
+    </script>
+    <!-- /bootstrap-daterangepicker -->
+    <!-- gauge.js -->
+    <script>
+        var opts = {
+            lines: 12,
+            angle: 0,
+            lineWidth: 0.4,
+            pointer: {
+                length: 0.75,
+                strokeWidth: 0.042,
+                color: '#1D212A'
+            },
+            limitMax: 'false',
+            colorStart: '#1ABC9C',
+            colorStop: '#1ABC9C',
+            strokeColor: '#F0F3F3',
+            generateGradient: true
+        };
+        var target = document.getElementById('foo'),
+            gauge = new Gauge(target).setOptions(opts);
+
+        gauge.maxValue = 6000;
+        gauge.animationSpeed = 32;
+        gauge.set(3200);
+        gauge.setTextField(document.getElementById("gauge-text"));
+    </script>
+    <!-- /gauge.js -->
+}

@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/Content/nprogress/css/nprogress.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/Content/nprogress/css/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="~/Content/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="~/Content/bootstrap-progressbar/css/bootstrap-progressbar.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="~/Content/jqvmap/css/jqvmap.min.css" rel="stylesheet" />
+    <!-- Custom Theme Style -->
+    <link href="~/Content/firee/css/custom.min.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="~/Content/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="/Home/" class="site_title"><i class="fa fa-fire"></i> <span>Firee!</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- menu profile quick info -->
+                    <div class="profile">
+                        <div class="profile_pic">
+                            <img src="~/Content/images/img.jpg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Welcome,</span>
+                            <h2>John Doe</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+                    <br />
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <ul class="nav side-menu">
+                                <li><a href="/Home/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                                <li><a href="/Suppliers/"><i class="fa fa-edit"></i> Suppliers</a></li>
+                                <li><a href="/Orders/"><i class="fa fa-table"></i> Orders</a></li>
+                                <li><a href="/Baskets/"><i class="fa fa-shopping-cart"></i> Shopping Basket</a></li>
+                                <li><a href="/Invoices/"><i class="fa fa-inbox"></i> Invoices</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+                </div>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="~/Content/images/img.jpg" alt="">John Doe
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="javascript:;"> Profile</a></li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="badge bg-red pull-right">50%</span>
+                                            <span>Settings</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="javascript:;">Help</a></li>
+                                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+                            <li role="presentation" class="dropdown">
+                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <span class="badge bg-green">6</span>
+                                </a>
+                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                    <li>
+                                        <a>
+                                            <span>
+                                                <span>La Rousse</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Butternut Squash - 35234 - 1KG - &euro;3.14
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span>
+                                                <span>La Rousse</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Butternut Squash - 35234 - 1KG - &euro;3.14
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span>
+                                                <span>La Rousse</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Butternut Squash - 35234 - 1KG - &euro;3.14
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span>
+                                                <span>La Rousse</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Butternut Squash - 35234 - 1KG - &euro;3.14
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="text-center">
+                                            <a href="shoppingBasket.html">
+                                                <strong>See All Items</strong>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            @RenderBody()
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    Firee!
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="~/Content/jquery/js/jquery.min.js"></script>
+    <!-- jQuery Number-->
+    <script src="~/Content/number/js/jquery.number.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Content/fastclick/js/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="~/Content/nprogress/js/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="~/Content/Chart.js/js/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="~/Content/gauge.js/js/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="~/Content/bootstrap-progressbar/js/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="~/Content/iCheck/js/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="~/Content/skycons/js/skycons.js"></script>
+    <!-- Flot -->
+    <script src="~/Content/Flot/js/jquery.flot.js"></script>
+    <script src="~/Content/Flot/js/jquery.flot.pie.js"></script>
+    <script src="~/Content/Flot/js/jquery.flot.time.js"></script>
+    <script src="~/Content/Flot/js/jquery.flot.stack.js"></script>
+    <script src="~/Content/Flot/js/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="~/Content/flot/js/jquery.flot.orderBars.js"></script>
+    <script src="~/Content/flot/js/date.js"></script>
+    <script src="~/Content/flot/js/jquery.flot.spline.js"></script>
+    <script src="~/Content/flot/js/curvedLines.js"></script>
+    <!-- Datatables -->
+    <script src="~/Content/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/Content/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/Content/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="~/Content/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="~/Content/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/Content/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="~/Content/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="~/Content/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="~/Content/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/Content/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="~/Content/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+    <!-- JQVMap -->
+    <script src="~/Content/jqvmap/js/jquery.vmap.js"></script>
+    <script src="~/Content/jqvmap/js/maps/jquery.vmap.world.js"></script>
+    <script src="~/Content/jqvmap/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="~/Content/moment/js/moment.min.js"></script>
+    <script src="~/Content/datepicker/js/daterangepicker.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="~/Content/firee/js/custom.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.collapse-link').click();
+        });
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
